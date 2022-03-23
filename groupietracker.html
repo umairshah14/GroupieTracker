@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Groupie Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css" />
+
+</head>
+
+<body>
+
+    <div class="TitleText">
+        <h1> Groupie Tracker</h1>
+    </div>
+
+    <form method="POST" action="/artistinfo">
+        <div class="Form">
+            <div class="Carousel">
+                {{range .artists}}
+                <button type="submit" name="ID" value={{.ID}} class="disc"> <img src="{{.Image}}" alt="{{.Name}}"
+                        width="82%" height="82%" class="imgrot" value="{{.ID}}" name="">
+                    <div id="CarouselName">
+                        <p>{{.Name}}</p>
+                    </div>
+                 </button>
+                
+                {{end}}
+
+
+            </div>
+    </form>
+    <div>
+        <h4 class="Text"> scroll to the right to see more artists</h4>
+    </div>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link href="static/style.css" rel="stylesheet">
+    <title>Information</title>
+</head>
+
+<body>
+
+    <div class="artistName">
+
+        {{.Artist.Name}}
+
+    </div>
+
+    <div class="artistCreation">
+
+        ({{.Artist.CreationDate}})
+
+    </div>
+    <br>
+
+    <div class="ArtistPic">
+        <img class="infoDiv" id="artistInfoImg" src="{{.Artist.Image}}" alt="Artist Image" width="300px" height="300px">
+    </div>
+    <br>
+
+    <div class="total">
+
+        <div class="Information" span>
+            <h3 class="Subheading"><i>Members</i></h3>
+
+            {{range .Artist.Members}}
+            <ul class="list">{{.}}</ul>
+            {{end}}
+
+        </div>
+
+        <div class="Information" span>
+
+            <p class="Subheading"><i>First album release date</i></p>
+            <p class="list">{{.Artist.FirstAlbum}}</p>
+        </div>
+
+        <div class="Information" id="locanddate" span>
+
+            <p class="Subheading" class="sameln"><i>Location</i></p>
+
+            {{range.Location.Locat}}
+            <ul class="list"> {{.}} </ul>
+            {{end}}
+
+        </div>
+
+
+        <div class="Information" span>
+
+            <p class="Subheading"><i>Dates</i></p>
+            {{range .Dates}}
+            <ol class="list">
+
+                <div class="dropdown">
+                    <button class="dropbtn">Dates</button>
+
+                    <div class="dropdown-content">
+                        {{range .}}
+                        <a href="#">{{.}}</a>
+                        {{end}}
+                    </div>
+                    
+
+
+                </div>
+            </ol>
+            {{end}}
+        </div>
+
+    </div>
+
+</body>
+
+</html>
